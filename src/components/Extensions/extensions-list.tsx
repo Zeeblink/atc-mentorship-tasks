@@ -13,12 +13,12 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
   const [extensions, setExtensions] = useState<Extension[]>(extensionsData); // State to manage the extensions data
 
   // Function to handle filter extensions using filter high order array method
-  const filteredExtensions = extensions.filter((extension) => {
-    if (filter === 'all') return true;
-    if (filter === 'active') return extension.active;
-    if (filter === 'inactive') return !extension.active;
-    return true;
-  })
+  // const filteredExtensions = extensions.filter((extension) => {
+  //   if (filter === 'all') return true;
+  //   if (filter === 'active') return extension.active;
+  //   if (filter === 'inactive') return !extension.active;
+  //   return true;
+  // })
 
   // Function to handle the toggle of the extensions using map high order array method
   // This function will toggle the active state of the extension when the user clicks on the button
