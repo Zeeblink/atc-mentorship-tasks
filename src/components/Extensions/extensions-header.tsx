@@ -14,7 +14,7 @@ export default function ExtensionsHeader({ theme, toggleTheme }: ExtensionsHeade
     >
       <div className="flex items-center gap-3">
         <img src="/assets/logo.svg" alt="logo" />
-        <h1 className="text-xl font-bold text-white">Extensions</h1>
+        {/* <h1 className="text-xl font-bold text-white">Extensions</h1> */}
       </div>
       <button
         className={`${theme === "light" ? "bg-[#1f2937]" : "bg-[#f1f5f9]"} p-2 rounded-lg cursor-pointer`}
