@@ -1,0 +1,8 @@
+.light-gradient {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  }
+  
+  .dark-gradient {
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  }
+  
