@@ -13,7 +13,7 @@ export default function ExtensionsHeader({ theme, toggleTheme }: ExtensionsHeade
       className={`bg-[#111827] rounded-2xl p-4 flex items-center justify-between mb-8 shadow-sm`}
     >
       <div className="flex items-center gap-3">
-        <img src="/assets/logo.svg" alt="" />
+        <img src="/assets/logo.svg" alt="logo" />
         <h1 className="text-xl font-bold text-white">Extensions</h1>
       </div>
       <button
