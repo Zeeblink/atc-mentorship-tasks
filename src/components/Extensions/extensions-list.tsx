@@ -10,20 +10,22 @@ interface ExtensionsListProps {
 const Extensions = ({ theme }: ExtensionsListProps) => {
 
   const [filter, setFilter] = useState<'all' | 'active' | 'inactive'>('all'); // State to manage the filter of the extensions
-  const [extensions, setExtensions] = useState<Extension[]>(extensionsData); // State to manage the extensions data
+  const [extensions, setExtensions] = useState<Extension[]>(extensionsData); // State to manage the list of extensions
+  
 
-  // Function to handle filter extensions using filter high order array method
-  // const filteredExtensions = extensions.filter((extension) => {
-  //   if (filter === 'all') return true;
-  //   if (filter === 'active') return extension.active;
-  //   if (filter === 'inactive') return !extension.active;
-  //   return true;
-  // })
+  // Function to handle filter extensions using "filter" high order array method
+  const filteredExtensions = extensionsData.filter((extension) => {
+    if (filter === 'all') return true;
+    if (filter === 'active') return extension.active;
+    if (filter === 'inactive') return !extension.active;
+    return true;
+  })
 
-  // Function to handle the toggle of the extensions using map high order array method
-  // This function will toggle the active state of the extension when the user clicks on the button
+  // Funtion to toggle extension on/off using "map" high order array method
   const toggleExtension = (id: number) => {
-    setExtensions(extensions.map((ext) => (ext.id === id ? { ...ext, active: !ext.active } : ext)))
+    setExtensions((prevExtensions) =>
+      prevExtensions.map((ext) => (ext.id === id ? { ...ext, active: !ext.active } : ext)),
+    )
   }
 
   return (
@@ -70,13 +72,15 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
           </button>
         </div>
       </div>
+      
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {extensionsData.map((extension) => (
+        {filteredExtensions.map((extension) => (
           <ExtensionCard
-            extension={extension}
-            key={extension.id}
-            onToggle={() => toggleExtension(extension.id)}
-            theme={theme}
+           extension={extension}
+           key={extension.id}
+           theme={theme}
+           onToggle={() => toggleExtension(extension.id)} // Pass the toggle function to the ExtensionCard component
+           // This function is called when the toggle button is clicked in the ExtensionCard component
           />
         ))}
       </div>

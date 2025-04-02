@@ -1,15 +1,13 @@
 "use client"
-
 import type { Extension } from '../../../lib/types';
 
 interface ExtensionCardProps {
     extension: Extension;
     theme: 'light' | 'dark';
-    onToggle: () => void;
+    onToggle: (id: number) => void; // Function to toggle the extension on/off
 }
 
 export default function ExtensionCard({ extension, theme, onToggle }: ExtensionCardProps) {
-
     return (
         <div className={`${theme === 'light' ? 'bg-white' : 'bg-[#1F2937]'} shadow-sm rounded-xl p-5 border border-gray-600`}>
             <div className="flex gap-4 mb-10">
@@ -35,15 +33,18 @@ export default function ExtensionCard({ extension, theme, onToggle }: ExtensionC
                     <input
                         type='checkbox'
                         className='sr-only'
-                        checked={extension.active}
-                        onChange={onToggle}
+                        checked={extension.active} // Set the checked state based on the extension's active status
+                        onChange={() => onToggle(extension.id)} // Toggle the active state of the extension and call the onToggle function
                         id={`toggle-${extension.id}`}
                     />
                     <div className={`w-11 h-6 rounded-full transition cursor-pointer
-                        ${extension.active ? 'bg-red-400' : theme === 'light' ? 'bg-[#e2e8f0]' : 'bg-gray-700'}`}>
+                        ${extension.active ? 'bg-red-400' : theme === 'light' ? 'bg-[#e2e8f0]' : 'bg-gray-700'}`}
+                        onClick={() => onToggle(extension.id)} // Toggle the active state of the extension and call the onToggle function
+                        >
 
                         <div
-                            className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform ${extension.active ? "translate-x-5" : "translate-x-0"
+                            className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform 
+                                ${extension.active ? "translate-x-5" : "translate-x-0"
                                 }`}
                         />
                     </div>
