@@ -9,24 +9,24 @@ interface ExtensionCardProps {
 
 export default function ExtensionCard({ extension, theme, onToggle }: ExtensionCardProps) {
     return (
-        <div className={`${theme === 'light' ? 'bg-white' : 'bg-[#1F2937]'} shadow-sm rounded-xl p-5 border border-gray-600`}>
+        <div className={`${theme === 'light' ? 'bg-neutral-0 border-neutral-200' : 'bg-neutral-800 border-neutral-600'} shadow-sm rounded-xl p-5 border`}>
             <div className="flex gap-4 mb-10">
                 <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center">
                     <img src={extension.icon} alt={extension.name} />
                 </div>
                 <div className='flex-1'>
-                    <h3 className={`text-lg font-semibold ${theme === 'light' ? 'text-[#172554]' : 'text-white'}`}>
+                    <h3 className={`text-lg font-bold mb-1 ${theme === 'light' ? 'text-[#172554]' : 'text-white'}`}>
                         {extension.name}
                     </h3>
-                    <p className={`text-sm ${theme === 'light' ? 'text-[#64748b]' : 'text-gray-400'}`}>
+                    <p className={`text-base leading-5 ${theme === 'light' ? 'text-neutral-700' : 'text-gray-400'}`}>
                         {extension.description}
                     </p>
                 </div>
             </div>
             <div className='mt-auto pt-2 flex items-center justify-between'>
-                <button className={`${theme === 'light' ? 'bg-white border-gray-600 text-[#475569] hover:bg-[#f8fafc]'
-                    : 'bg-transparent border-gray-700 text-white hover:bg-gray-800'} border px-4 py-1.5 rounded-2xl text-sm`}>
+                <button className={`${theme === 'light' ? 'bg-neutral-0 border-neutral-400 text-neutral-700 hover:text-neutral-200'
+                    : 'bg-transparent border-neutral-600 text-white hover:text-neutral-800'} hover:bg-red-400 border px-4 py-1.5 rounded-2xl text-sm font-semibold cursor-pointer`}>
                     Remove
                 </button>
                 <div className="relative items-center inline-flex">
@@ -38,7 +38,7 @@ export default function ExtensionCard({ extension, theme, onToggle }: ExtensionC
                         id={`toggle-${extension.id}`}
                     />
                     <div className={`w-11 h-6 rounded-full transition cursor-pointer
-                        ${extension.active ? 'bg-red-400' : theme === 'light' ? 'bg-[#e2e8f0]' : 'bg-gray-700'}`}
+                        ${extension.active ? 'bg-red-400' : theme === 'light' ? 'bg-neutral-300' : 'bg-neutral-600'}`}
                         onClick={() => onToggle(extension.id)} // Toggle the active state of the extension and call the onToggle function
                         >
 

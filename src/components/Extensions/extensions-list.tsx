@@ -14,7 +14,7 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
   
 
   // Function to handle filter extensions using "filter" high order array method
-  const filteredExtensions = extensionsData.filter((extension) => {
+  const filteredExtensions = extensions.filter((extension) => { // Use the 'extensions' state here
     if (filter === 'all') return true;
     if (filter === 'active') return extension.active;
     if (filter === 'inactive') return !extension.active;
@@ -30,17 +30,17 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
 
   return (
     <>
-      <div className='mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4'>
-        <h2 className={`text-2xl font-bold ${theme === 'light' ? 'text-[#172554]' : 'text-white'}`}>Extensions List</h2>
+      <div className='mb-6 flex flex-col md:flex-row items-center  justify-center md:justify-between gap-4'>
+        <h2 className={`text-4xl lg:text-3xl font-bold ${theme === 'light' ? 'text-neutral-900' : 'text-white'}`}>Extensions List</h2>
         <div className="flex gap-2">
 
           {/* This button sets the filter state to all */}
           <button
             className={`px-4 py-2 cursor-pointer rounded-full font-medium ${filter === "all"
-              ? "bg-[#e11d48] text-white"
+              ? "bg-red-400 text-white"
               : theme === "light"
-                ? "bg-[#f1f5f9] text-[#475569]"
-                : "bg-[#1f2937] text-white"
+                ? "bg-neutral-0 text-neutral-900 border border-neutral-100 shadow-sm"
+                : "bg-neutral-800 border-neutral-600 text-white"
               }`}
             onClick={() => setFilter("all")}
           >
@@ -49,10 +49,10 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
           {/* This button sets the filter state to active */}
           <button
             className={`px-4 py-2 cursor-pointer rounded-full font-medium ${filter === "active"
-              ? "bg-[#e11d48] text-white"
+              ? "bg-red-400 text-white"
               : theme === "light"
-                ? "bg-[#f1f5f9] text-[#475569]"
-                : "bg-[#1f2937] text-white"
+                ? "bg-neutral-0 text-neutral-900 border border-neutral-100 shadow-sm"
+                : "bg-neutral-800 border-neutral-600 text-white"
               }`}
             onClick={() => setFilter("active")}
           >
@@ -61,10 +61,10 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
           {/* This button sets the filter state to inactive */}
           <button
             className={`px-4 py-2 cursor-pointer rounded-full font-medium ${filter === "inactive"
-              ? "bg-[#e11d48] text-white"
+              ? "bg-red-400 text-white"
               : theme === "light"
-                ? "bg-[#f1f5f9] text-[#475569]"
-                : "bg-[#1f2937] text-white"
+                ? "bg-neutral-0 text-neutral-900 border border-neutral-100 shadow-sm"
+                : "bg-neutral-800 border-neutral-600 text-white"
               }`}
             onClick={() => setFilter("inactive")}
           >
