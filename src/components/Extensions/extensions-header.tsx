@@ -10,10 +10,10 @@ interface ExtensionsHeaderProps {
 export default function ExtensionsHeader({ theme, toggleTheme }: ExtensionsHeaderProps) {
   return (
     <div
-      className={`${theme === 'dark' ? 'bg-neutral-800' : 'bg-white'} rounded-2xl p-3 flex items-center justify-between mb-10 shadow-sm`}
+      className={`${theme === 'dark' ? 'bg-neutral-800' : 'bg-white'} rounded-2xl p-3 flex items-center justify-between mb-14 shadow-sm`}
     >
       <div className="flex items-center gap-3">
-        <img src="/assets/logo.svg" alt="logo" />
+        <img src={`${theme === 'light' ? '/assets/logo-light.svg' : '/assets/logo.svg'}`} alt="logo" />
         {/* <h1 className="text-xl font-bold text-white">Extensions</h1> */}
       </div>
       <button

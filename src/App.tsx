@@ -11,7 +11,7 @@ function App() {
   }
   
   return (
-    <div className={`${theme === 'dark' ? 'dark-gradient' : 'light-gradient'} min-h-screen  text-foreground p-4 md:px-24 md:py-12`}>
+    <div className={`${theme === 'dark' ? 'dark-gradient' : 'light-gradient'} min-h-screen  text-foreground p-4 md:px-24 md:pt-10 md:pb-12`}>
       <ExtensionsHeader theme={theme} toggleTheme={() => toggleTheme()}/>
       <Extensions theme={theme}/> 
       {/* <FAQ />

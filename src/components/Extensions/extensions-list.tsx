@@ -30,7 +30,7 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
 
   return (
     <>
-      <div className='mb-6 flex flex-col md:flex-row items-center  justify-center md:justify-between gap-4'>
+      <div className='mb-7 flex flex-col md:flex-row items-center  justify-center md:justify-between gap-4'>
         <h2 className={`text-4xl lg:text-3xl font-bold ${theme === 'light' ? 'text-neutral-900' : 'text-white'}`}>Extensions List</h2>
         <div className="flex gap-2">
 
