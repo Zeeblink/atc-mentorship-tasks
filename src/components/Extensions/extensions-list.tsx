@@ -7,7 +7,7 @@ interface ExtensionsListProps {
   theme: 'light' | 'dark';
 }
 
-const Extensions = ({ theme }: ExtensionsListProps) => {
+const ExtensionsList = ({ theme }: ExtensionsListProps) => {
 
   const [filter, setFilter] = useState<'all' | 'active' | 'inactive'>('all'); // State to manage the filter of the extensions
   const [extensions, setExtensions] = useState<Extension[]>(extensionsData); // State to manage the list of extensions
@@ -88,4 +88,4 @@ const Extensions = ({ theme }: ExtensionsListProps) => {
   );
 };
 
-export default Extensions;
+export default ExtensionsList;
