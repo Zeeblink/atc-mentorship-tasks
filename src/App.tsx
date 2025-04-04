@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-6">
-      <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">
+      <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-20">
         ATC Techrise Mentorship Tasks
       </h1>
       
@@ -62,7 +62,7 @@ function App() {
       </div>
       
       <p className="mt-12 text-gray-500 dark:text-gray-400 text-sm">
-        Built with React and Tailwind CSS
+        Built with React, TypeScript and Tailwind CSS
       </p>
     </div>
   )
